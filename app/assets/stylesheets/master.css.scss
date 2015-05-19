@@ -1,3 +1,11 @@
+.about {
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.bio {
+    text-align: left;
+}
+
 .clear {
 	clear:both;
 }
@@ -44,6 +52,7 @@ hr {
 
 .links {
 	padding-top: 26px;
+    text-align: right;
 }
 
 .links a {
@@ -62,9 +71,13 @@ hr {
 	font-size:20px;
 }
 
+.picture {
+    float: right;
+}
 .slogan {
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-style: italic;
   padding-top: 26px;
   font-size: 25px;
+  text-align: center;
 }
