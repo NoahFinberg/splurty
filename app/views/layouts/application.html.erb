@@ -29,8 +29,20 @@
 	<hr />
 
 	<br class="clear"/>
+<div class="container">
+	<%= yield %>
+</div>
 
-<%= yield %>
+<div class="footer">
+	<div class="container">
+		<div class="col-xs-6">
+			<%= link_to "Boot and rally! I need more knowledge.", "#", :class => 'next-quote' %>
+		</div>
+		<div class="col-xs-6 footer-blurb">
+			Copyright (C) 2015 Noah Finberg All Rights Reserved
+		</div>
+	</div>
+</div>
 
 </body>
 </html>
