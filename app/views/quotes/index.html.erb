@@ -1,9 +1,16 @@
+<!-- VIEW FOR THE HOMEPAGE -->
+
 <h2>
-  <span>SPLURTY / No. <%= @quote.id %>:</span>
-  Get pumped for some semi-random pontification
+	<!--Present the user with the motivational intro message and current quote id -->
+	<span>SPLURTY / No. <%= @quote.id %>:</span>
+	Get pumped for some semi-random pontification!
 </h2>
+
 <br />
+
+<!--Display the actual quote within quotation-marks -->
 <h1><%= '"' + @quote.saying + '"' %></h1>
+<!--Displays the author associated quote on the right side of the screen-->
 <h2 class="pull-right"><%= "--" + @quote.author %></h2>
 
 

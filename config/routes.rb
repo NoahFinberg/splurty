@@ -5,7 +5,10 @@ Splurty::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'quotes#index'
 
+  #generates CRUD operations routes for quotes
   resources :quotes
+
+  #points the about URL to the about action in the quotes controller
   get 'about', :to => 'quotes#about'
 
   # Example of regular route:

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
+<!--Makes sure all the relevent javascript and css code gets applied to the html on this page-->
 <head>
   <title>Splurty</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
 	<header>
+		<!--The header takes up all twelve columns on xtra small screens and above-->
 		<div class="col-xs-3">
+			<!--The logo links to the root path and uses three columns of space-->
 			<%= link_to root_path, :class => 'logo' do %>
 			<div class="circle">
 				<br/>
@@ -20,12 +25,16 @@
 			</div>
 			<% end %>
 		</div>
+		<!--The slogan the uses five columns of space on small screens and up and dissappers on xtra small screens-->
 		<div class="col-sm-5 hidden-xs slogan">
 			Splurting out knowledge since 2015
 		</div>
+		<!--The navigation buttons take  up eight columns on xtra small screens, and four on small screens and up-->
 		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-4 links">
 
 			<!-- Button trigger modal -->
+			<!--The contribute link triggers some data: this toggles the class modal which displays all the relevent
+				modal code with particulat model id myModal (written below)-->
   			<%= link_to 'Contribute', '#', :data => { :toggle => 'modal', :target => '#myModal' } %>
   			&nbsp;&nbsp;
 			<%= link_to 'About', about_path %>
@@ -37,42 +46,57 @@
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <!--Modal Title-->
           <h4 class="modal-title" id="myModalLabel">Spew Some Knowledge!</h4>
         </div>
+        <!--Create Quote Form -->
+        <!--Pre-poluate the form with a new quote, not the current instance of @quote!-->
         <%= simple_form_for Quote.new do |f| %>
+        	<!--Modal Body-->
         	<div class="modal-body">
+        		<!--Fields accept user input for the :saying and :author attributes of the new quote-->
             	<%= f.input :saying, :label => "What's your chunk of wisdom? (Quote)", :placeholder => "What is Love?" %>
             	<br />
             	<%= f.input :author, :label => "Who is the original hurler? (Author)", :placeholder => "Haddaway" %>
             </div>
+            <!--Modal Footer-->
             <div class="modal-footer">
             	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            	<!-- Triggers the quotes#create action and sends a params hash of the user's form input-->
             	<%= f.submit 'Add Quote', :class => 'btn btn-danger' %>
         	</div>
         <% end %>
+
       </div>
     </div>
   </div>
 
-	<br class="clear"/>
+<br class="clear"/>
+<!--If the user has just submitted invalid data, then alert the user that the quote did not save-->
 <div class="container">
 	<% if flash[:error].present? %>
+		<!--The error message takes up the center ten columns of the screen on all screens-->
 		<div class="col-xs-10 col-xs-offset-1 alert alert-danger">
 			<%= flash[:error].html_safe %>
 		</div>
 	<% end %>
+	<!--Displays current, view page specific information-->
 	<%= yield %>
 </div>
 
+<!--Footer-->
 <div class="footer">
 	<div class="container">
+		<!--The next quote link takes up the whole width of the screen on xtra small ones and half on larger ones-->
 		<div class="col-xs-12 col-sm-6">
 			<%= link_to "Boot and rally Splurty! I need more knowledge.", root_path, :class => 'next-quote' %>
 		</div>
+		<!--The copyright information takes up the whole width of the screen on xtra small ones and half on larger ones-->
 		<div class="col-xs-12 col-sm-6 footer-blurb">
-			Copyright (C) 2015 Noah Finberg All Rights Reserved
+			Copyright (C) 2015 <a href="https://github.com/NoahFinberg">Noah Finberg</a> All Rights Reserved
 		</div>
 	</div>
 </div>
