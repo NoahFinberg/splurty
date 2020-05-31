@@ -7,7 +7,7 @@ gem 'rails', '4.0.1'
 gem 'pg'
 
 #Add Twitter Boostrap
-gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
